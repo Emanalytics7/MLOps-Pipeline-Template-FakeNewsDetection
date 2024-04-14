@@ -1,5 +1,6 @@
 import pickle
 import logging
+import pandas as pd
 from sklearn.metrics import classification_report
 from utils.config import get_config
 from utils.logger import setup_logging
@@ -9,7 +10,7 @@ class ModelEvaluator:
         setup_logging()
         self.logger = logging.getLogger(__name__)
         self.config = get_config(config_path)
-        self.test_data_path = self.config['paths']['test_data']
+        self.test_data_path = self.config['paths']['test_data']  
         self.model_path = self.config['paths']['model']
 
     def load_model_and_data(self):
@@ -17,8 +18,11 @@ class ModelEvaluator:
         try:
             with open(self.model_path, 'rb') as f:
                 model = pickle.load(f)
-            with open(self.test_data_path, 'rb') as f:
-                X_test, y_test = pickle.load(f)
+            # Loading the test data 
+            test_data = pd.read_csv(self.test_data_path)
+            X_test = test_data.iloc[:, :-1]  
+            y_test = test_data.iloc[:, -1]
+
             self.logger.info("Model and test data loaded successfully.")
             return model, X_test, y_test
         except Exception as e:
@@ -28,7 +32,7 @@ class ModelEvaluator:
     def evaluate_model(self, model, X_test, y_test):
         """ Evaluate the model using the test set and print a classification report. """
         predictions = model.predict(X_test)
-        report = classification_report(y_test, predictions)
+        report = classification_report(y_test, predictions, zero_division=0)
         self.logger.info("Model evaluation report:\n" + report)
 
     def run(self):

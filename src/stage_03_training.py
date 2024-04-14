@@ -1,5 +1,6 @@
 import pickle
 import logging
+import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from utils.config import get_config
@@ -13,6 +14,7 @@ class TextModelTrainer:
         self.feature_path = self.config['paths']['features']
         self.label_path = self.config['paths']['labels']
         self.model_path = self.config['paths']['model']
+        self.test_data_path = self.config['paths']['test_data']
 
     def load_data(self):
         """ Load features and labels from pickle files. """
@@ -33,6 +35,11 @@ class TextModelTrainer:
         model = LogisticRegression(max_iter=1000)
         model.fit(X_train, y_train)
         self.logger.info("Model training completed.")
+
+        test_data = pd.DataFrame(X_test)
+        test_data['label'] = y_test
+        test_data.to_csv(self.test_data_path, index=False)
+        self.logger.info(f"Test data saved to {self.test_data_path}")
         return model
 
     def save_model(self, model):

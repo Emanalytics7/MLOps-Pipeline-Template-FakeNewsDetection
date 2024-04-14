@@ -17,28 +17,22 @@ class DataIngestor:
         self.logger = logging.getLogger(__name__)
         self.config = get_config()
         self.raw_data_path = self.config['paths']['raw_data']
-        self.processed_data_path = self.config['paths']['processed_data']
-
-    def check_directory(self, path):
-        """ Check if directory exists and create it if it does not. """
-        if not os.path.exists(path):
-            self.logger.info(f'Creating directory: {path}')
-            os.makedirs(path)
+        self.processed_data_path = os.path.dirname(self.raw_data_path) 
 
     def extract_data(self):
-        """ Extract data from a zip file into the processed directory. """
+        """ Extract data from a zip file into the directory where the zip file is located. """
         try:
             with zipfile.ZipFile(self.raw_data_path, 'r') as zip_ref:
-                self.logger.info(f'Extracting data from {self.raw_data_path}...')
+                self.logger.info(f'Extracting data from {self.raw_data_path} into {self.processed_data_path}...')
                 zip_ref.extractall(self.processed_data_path)
             self.logger.info('Data extraction complete.')
+            return True
         except Exception as e:
             self.logger.error(f'Failed to extract data: {e}')
             return False
-        return True
 
     def find_csv_files(self):
-        """ Find all CSV files in the processed directory. """
+        """ Find all CSV files in the directory where the data was extracted. """
         csv_files = [f for f in os.listdir(self.processed_data_path) if f.endswith('.csv')]
         if not csv_files:
             self.logger.error('No CSV files found!')
@@ -61,9 +55,8 @@ class DataIngestor:
     def run(self):
         self.logger.info('Starting data ingestion...')
         if not os.path.exists(self.raw_data_path):
-            self.logger.info(f'The zip file doesn\'t exist: {self.raw_data_path}')
+            self.logger.error(f'The zip file doesn\'t exist: {self.raw_data_path}')
             return
-        self.check_directory(self.processed_data_path)
         if self.extract_data():
             csv_file = self.find_csv_files()
             if csv_file:
