@@ -1,16 +1,18 @@
 import os
 
 project_structure = [
-    "data/raw",
-    "data/processed",
-    "notebooks",
+    ".github/workflows/.gitkeep",
     "src/data",
-    "src/features",
-    "src/models",
-    "src/utils",
-    "tests",
-    "api",
-    "docker",
+    "notebooks",
+    "config/settings.ini",
+    "logs/app.log",
+    "models/.gitkeep",
+    "src/__init__.py",
+    "utils/__init__.py",
+    ".gitignore",
+    "template.py",
+    "README.md",
+    "requirements.txt",
 ]
 
 # Function to create directories
