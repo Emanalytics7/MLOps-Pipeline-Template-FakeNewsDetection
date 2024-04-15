@@ -5,8 +5,8 @@ import zipfile
 import pandas as pd
 from pathlib import Path
 
-root = str(Path(__file__).resolve().parents[1])
-sys.path.append(root)
+# root = str(Path(__file__).resolve().parents[1])
+# sys.path.append(root)
 
 from utils.logger import setup_logging
 from utils.config import get_config
@@ -65,6 +65,6 @@ class DataIngestor:
                     self.logger.info(df.head())
                     self.logger.info('Data ingestion completed.')
 
-if __name__ == '__main__':
-    ingestor = DataIngestor()
-    ingestor.run()
+# if __name__ == '__main__':
+#     ingestor = DataIngestor()
+#     ingestor.run()

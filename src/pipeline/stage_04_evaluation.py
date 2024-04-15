@@ -1,7 +1,12 @@
 import pickle
 import logging
 import pandas as pd
+import sys
 from sklearn.metrics import classification_report
+from pathlib import Path
+
+root = str(Path(__file__).resolve().parents[1])
+sys.path.append(root)
 from utils.config import get_config
 from utils.logger import setup_logging
 
@@ -40,7 +45,3 @@ class ModelEvaluator:
         model, X_test, y_test = self.load_model_and_data()
         if model and X_test is not None:
             self.evaluate_model(model, X_test, y_test)
-
-if __name__ == '__main__':
-    evaluator = ModelEvaluator('config/settings.ini')
-    evaluator.run()

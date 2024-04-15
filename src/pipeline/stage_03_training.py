@@ -1,8 +1,13 @@
 import pickle
+import sys
 import logging
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+from pathlib import Path
+
+root = str(Path(__file__).resolve().parents[1])
+sys.path.append(root)
 from utils.config import get_config
 from utils.logger import setup_logging
 
@@ -55,6 +60,3 @@ class TextModelTrainer:
             model = self.train_model(features, labels)
             self.save_model(model)
 
-if __name__ == '__main__':
-    trainer = TextModelTrainer('config/settings.ini')
-    trainer.run()

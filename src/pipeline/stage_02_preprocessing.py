@@ -1,4 +1,4 @@
-import os
+import sys
 import re
 import logging
 import pickle
@@ -6,6 +6,11 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from pathlib import Path
+
+root = str(Path(__file__).resolve().parents[1])
+sys.path.append(root)
+
 from utils.config import get_config
 from utils.logger import setup_logging
 import nltk
@@ -67,6 +72,3 @@ class TextDataProcessor:
             features, labels = self.preprocess_data(data)
             self.save_data(features, labels)
 
-if __name__ == '__main__':
-    processor = TextDataProcessor('config/settings.ini')
-    processor.run()
