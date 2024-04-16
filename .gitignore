@@ -160,3 +160,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea fol
 
 artifacts/features.pkl
+artifacts/raw_data.csv
+artifacts/test.csv

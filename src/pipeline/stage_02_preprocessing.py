@@ -27,6 +27,7 @@ class TextDataProcessor:
         self.raw_data_path = self.config['paths']['data']
         self.feature_path = self.raw_data_path.replace('raw_data.csv', 'features.pkl')
         self.label_path = self.raw_data_path.replace('raw_data.csv', 'labels.pkl')
+        self.vectorizer_path = self.raw_data_path.replace('raw_data.csv', 'vectorizer.pkl') 
 
     def load_data(self):
         """ Load the dataset from a CSV file. """
@@ -52,8 +53,8 @@ class TextDataProcessor:
     def preprocess_data(self, data):
         """ Preprocess the data: clean and vectorize text. """
         data['text'] = data['text'].apply(self.clean_text)
-        vectorizer = TfidfVectorizer(stop_words=stopwords.words('english'), max_features=5000)
-        features = vectorizer.fit_transform(data['text']).toarray()
+        self.vectorizer = TfidfVectorizer(stop_words=stopwords.words('english'), max_features=5000)
+        features = self.vectorizer.fit_transform(data['text']).toarray()
         self.logger.info("Data preprocessing complete.")
         return features, data['label'].values
 
@@ -63,6 +64,8 @@ class TextDataProcessor:
             pickle.dump(features, f_feature)
         with open(self.label_path, 'wb') as f_label:
             pickle.dump(labels, f_label)
+        with open(self.vectorizer_path, 'wb') as f_vectorizer:
+            pickle.dump(self.vectorizer, f_vectorizer)
         self.logger.info(f"Features and labels saved to {self.feature_path} and {self.label_path} respectively.")
 
     def run(self):
