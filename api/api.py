@@ -8,10 +8,10 @@ import re
 app = Flask(__name__)
 
 # Loading the model and vectorizer
-with open('model.pkl', 'rb') as f:
+with open('api/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('vectorizer.pkl', 'rb') as f:
+with open('api/vectorizer.pkl', 'rb') as f:
     vectorizer = pickle.load(f)
 
 def clean_text(text):
