@@ -19,4 +19,4 @@ ENV FLASK_APP=api/api.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
 # Run api.py when the container launches
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5500"]
+CMD ["flask", "run"]

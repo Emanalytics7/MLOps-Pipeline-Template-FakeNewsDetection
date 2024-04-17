@@ -27,7 +27,7 @@ class TextDataProcessor:
         self.raw_data_path = self.config['paths']['data']
         self.feature_path = self.raw_data_path.replace('raw_data.csv', 'features.pkl')
         self.label_path = self.raw_data_path.replace('raw_data.csv', 'labels.pkl')
-        self.vectorizer_path = self.raw_data_path.replace('raw_data.csv', 'vectorizer.pkl') 
+        self.vectorizer_path = self.config['path']['vectorizer']
 
     def load_data(self):
         """ Load the dataset from a CSV file. """
