@@ -11,8 +11,8 @@ COPY . /app
 # Note: Make sure you have a requirements.txt file with all the necessary packages
 RUN pip install -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
 # Define environment variable
 ENV FLASK_APP=api/api.py
