@@ -22,7 +22,9 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
-    return ' '.join([lemmatizer.lemmatize(word) for word in text.split() if word not in stop_words])
+    return ' '.join([lemmatizer.lemmatize(word)
+                      for word in text.split()
+                        if word not in stop_words])
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -34,9 +36,11 @@ def predict():
     probability = model.predict_proba(features)
 
     if prediction[0] == 0:
-        return jsonify({'prediction':'Fake News', 'probability': probability[0].tolist()})
+        return jsonify({'prediction':'Fake News', 
+                        'probability': probability[0].tolist()})
     else:
-        return jsonify({'prediction': 'Authentic News', 'probability': probability[0].tolist()})
+        return jsonify({'prediction': 'Authentic News',
+                         'probability': probability[0].tolist()})
 
 if __name__ == '__main__':
     app.run(debug=True)
