@@ -10,9 +10,11 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 # Note: Make sure you have a requirements.txt file with all the necessary packages
 RUN pip install -r requirements.txt
+# Download necessary NLTK resources
+RUN python -m nltk.downloader stopwords wordnet omw-1.4
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 
 # Define environment variable
 ENV FLASK_APP=api/api.py
