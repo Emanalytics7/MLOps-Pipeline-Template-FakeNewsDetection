@@ -2,15 +2,16 @@ import os
 
 project_structure = [
     ".github/workflows/.gitkeep",
-    "src/data",
-    "notebooks",
+    "api",
+    "artifacts/",
     "config/settings.ini",
     "logs/app.log",
-    "models/.gitkeep",
     "src/__init__.py",
-    "utils/__init__.py",
+    "src/pipeline/__init__.py",
+    "src/utils/__init__.py",
     ".gitignore",
-    "template.py",
+    "dockerfile",
+    "main.py",
     "README.md",
     "requirements.txt",
 ]
