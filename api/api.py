@@ -25,7 +25,6 @@ def clean_text(text):
     return ' '.join([lemmatizer.lemmatize(word)
                       for word in text.split()
                         if word not in stop_words])
-    
 
 @app.route('/predict', methods=['POST'])
 def predict():
