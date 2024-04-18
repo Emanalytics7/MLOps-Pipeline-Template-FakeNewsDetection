@@ -63,7 +63,7 @@ jobs:
             --resource-group flaskapi123 \
             --name FakenewsDetection-API \
             --image flaskapi123.azurecr.io/my-flask-api:${{ github.sha }} \
-            --dns-name-label fake-news-detection-ml-api \
+            --dns-name-label fake-news-detection \
             --ports 5000 \
             --registry-login-server flaskapi123.azurecr.io \
             --registry-username ${{ secrets.ACR_USERNAME }} \
