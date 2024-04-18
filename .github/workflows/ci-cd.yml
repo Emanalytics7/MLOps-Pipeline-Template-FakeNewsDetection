@@ -2,7 +2,9 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and Deploy Flask ML API to Azure Container Instances
-
+permissions:
+  contents: read
+  id-token: write  # Grant permission to write ID tokens
 on:
   push:
     branches:
