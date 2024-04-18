@@ -60,10 +60,9 @@ jobs:
       - name: Deploy to Azure Container Instances
         run: |
           az container create \
-            --resource-group flaskapi123 \
+            --resource-group flaskapi11 \
             --name FakenewsDetection-API \
-            --image flaskapi123.azurecr.io/my-flask-api:${{ github.sha }} \
-            --dns-name-label fake-news-detection \
+            --image flaskapi11.azurecr.io/my-flask-api:${{ github.sha }} \
             --ports 5000 \
             --registry-login-server flaskapi123.azurecr.io \
             --registry-username ${{ secrets.ACR_USERNAME }} \
