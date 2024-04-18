@@ -5,7 +5,6 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import re
 
-
 app = Flask(__name__)
 
 # Loading the model and vectorizer
