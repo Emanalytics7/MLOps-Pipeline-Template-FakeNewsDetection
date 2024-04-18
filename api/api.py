@@ -14,6 +14,7 @@ with open('api/model.pkl', 'rb') as f:
 with open('api/vectorizer.pkl', 'rb') as f:
     vectorizer = pickle.load(f)
 
+# to clean the incoming data
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'<.*?>', '', text)
