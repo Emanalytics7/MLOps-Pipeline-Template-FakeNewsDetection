@@ -64,6 +64,6 @@ jobs:
             --name FakenewsDetection-API \
             --image flaskapi11.azurecr.io/my-flask-api:${{ github.sha }} \
             --ports 5000 \
-            --registry-login-server flaskapi123.azurecr.io \
+            --registry-login-server flaskapi11.azurecr.io \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
