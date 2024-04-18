@@ -68,7 +68,7 @@ jobs:
           auto_merge: false
           description: 'Deploying to Azure Container Instances'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           
       - name: Deploy to Azure Container Instances
         run: |
@@ -90,7 +90,7 @@ jobs:
           environment: 'production'
           description: 'Deployment successful'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
       - name: Update deployment status (failure)
         if: failure()
@@ -101,4 +101,4 @@ jobs:
           environment: 'production'
           description: 'Deployment failed'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
