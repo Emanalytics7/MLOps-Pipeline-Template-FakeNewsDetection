@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import re
 
+
 app = Flask(__name__)
 
 # Loading the model and vectorizer
@@ -42,6 +43,5 @@ def predict():
     else:
         return jsonify({'prediction': 'Authentic News',
                          'probability': probability[0].tolist()})
-
 if __name__ == '__main__':
     app.run(debug=True)
