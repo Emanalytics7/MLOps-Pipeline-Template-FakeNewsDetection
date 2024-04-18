@@ -58,6 +58,18 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           slot-name: 'production'
           
+      - name: Create GitHub deployment
+        id: create_deployment
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/${{ github.repository }}/deployments
+          ref: ${{ github.sha }}
+          environment: 'production'
+          auto_merge: false
+          description: 'Deploying to Azure Container Instances'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Deploy to Azure Container Instances
         run: |
           az container create \
@@ -68,3 +80,25 @@ jobs:
             --registry-login-server flaskapi123.azurecr.io \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
+            
+      - name: Update deployment status (success)
+        if: success()
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/${{ github.repository }}/deployments/${{ steps.create_deployment.outputs.id }}/statuses
+          state: 'success'
+          environment: 'production'
+          description: 'Deployment successful'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/${{ github.repository }}/deployments/${{ steps.create_deployment.outputs.id }}/statuses
+          state: 'failure'
+          environment: 'production'
+          description: 'Deployment failed'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
