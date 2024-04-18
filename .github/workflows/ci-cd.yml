@@ -10,9 +10,6 @@ on:
     paths:
       - 'api/api.py'
   workflow_dispatch:
-permissions:
-  contents: read
-  id-token: write  # Grant permission to write ID tokens
 
 jobs:
   build-and-push:
@@ -67,8 +64,7 @@ jobs:
             --name FakenewsDetection-API \
             --image flaskapi123.azurecr.io/my-flask-api:${{ github.sha }} \
             --dns-name-label fake-news-detection-ml-api \
-            --ports 80 \
-            --environment-variables ENV_VAR_NAME=value \
+            --ports 5000 \
             --registry-login-server flaskapi123.azurecr.io \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
