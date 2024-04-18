@@ -41,6 +41,7 @@ def predict():
     else:
         return jsonify({'prediction': 'Authentic News',
                          'probability': probability[0].tolist()})
-    
+
+
 if __name__ == '__main__':
     app.run(debug=True)
