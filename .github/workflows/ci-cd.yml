@@ -10,6 +10,9 @@ on:
     paths:
       - 'api/api.py'
   workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write  # Grant permission to write ID tokens
 
 jobs:
   build-and-push:
