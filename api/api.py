@@ -35,6 +35,7 @@ def predict():
     cleaned_text = clean_text(text)
     features = vectorizer.transform([cleaned_text]).toarray()
     prediction = model.predict(features)
+    
     probability = model.predict_proba(features)
     if prediction[0] == 0:
         return jsonify({'prediction':'Fake News', 
