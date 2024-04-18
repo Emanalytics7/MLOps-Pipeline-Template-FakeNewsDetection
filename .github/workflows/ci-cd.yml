@@ -61,7 +61,7 @@ jobs:
         run: |
           az container create \
             --resource-group Flask-api \
-            --name FakenewsDetection-API \
+            --name flaskapi123 \
             --image flaskapi123.azurecr.io/my-flask-api:${{ github.sha }} \
             --ports 5000 \
             --registry-login-server flaskapi123.azurecr.io \
