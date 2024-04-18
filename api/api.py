@@ -26,6 +26,7 @@ def clean_text(text):
                       for word in text.split()
                         if word not in stop_words])
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
