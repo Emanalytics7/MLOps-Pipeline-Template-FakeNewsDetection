@@ -1,6 +1,8 @@
 # Comprehensive MLOps Pipeline Template for Machine Learning Projects
 Enhance the efficiency and scalability of your machine learning projects with our MLOps Pipeline Template. This comprehensive guide will help you understand, customize, and efficiently utilize the template to align with your project requirements.
 
+![image](https://github.com/Emanalytics7/MLOps-Pipeline-Template-FakeNewsDetection/assets/142586747/68db41fa-3a8f-4ed8-8561-c9d94c5afcd5)
+
 ## Welcome to the MLOps Pipeline Template
 This template is designed to automate and streamline your machine learning projects, making them robust and scalable. Below, you'll find a comprehensive guide to utilizing and customizing this template to fit your specific needs.
 
@@ -94,6 +96,7 @@ Here's a quick rundown:
  [Deploying Docker to Azure App Service](https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-azure/deploying-docker-to-azure-app-service).
    
 *This setup allows you to deploy any containerized application seamlessly using GitHub Actions directly to Azure App Service.*
+![image](https://github.com/Emanalytics7/MLOps-Pipeline-Template-FakeNewsDetection/assets/142586747/14ee8bf2-bc26-4e8f-b845-3eb6c6436cb8)
 
 ## Integrating the Fake News Detection API
 
