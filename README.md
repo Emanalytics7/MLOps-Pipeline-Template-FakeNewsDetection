@@ -1,7 +1,7 @@
 # Comprehensive MLOps Pipeline Template for Machine Learning Projects
 Enhance the efficiency and scalability of your machine learning projects with our MLOps Pipeline Template. This comprehensive guide will help you understand, customize, and efficiently utilize the template to align with your project requirements.
 
-### Welcome to the MLOps Pipeline Template.
+## Welcome to the MLOps Pipeline Template.
 This template is designed to automate and streamline your machine learning projects, making them robust and scalable. Below, you'll find a comprehensive guide to utilizing and customizing this template to fit your specific needs.
 
 *Make your own project super cool!* :)
