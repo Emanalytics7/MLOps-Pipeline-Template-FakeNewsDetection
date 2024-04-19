@@ -7,7 +7,7 @@ This template is designed to automate and streamline your machine learning proje
 *Make your own project super cool!* :)
 
 # Project Overview
-This template is structured to support end-to-end machine learning workflows, from data ingestion to model deployment. Here's how our project is organized:
+This template is structured to support end-to-end machine learning workflows, from data ingestion to model deployment. Here's how the project is organized:
 
 ``` sh
 ├── api
