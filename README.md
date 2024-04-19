@@ -8,7 +8,6 @@ This template is designed to automate and streamline your machine learning proje
 
 *Make your own project super cool!* :)
 
---
 # Prerequisites
 ## Skills Required
 - **Python**: Proficiency in Python programming is essential as the project's codebase is primarily Python.
@@ -167,6 +166,7 @@ If this project has been beneficial to you, please consider giving it a star‚≠ê
 
 Thank you for exploring this MLOps pipeline template. It has been a valuable learning experience, and I hope it will be equally insightful for you. :)
 
+---
 
 ### !Note
 It can be significantly improved by you. While version control could elevate your project, I've avoided using it here to keep things simple. Additionally, more advanced technologies could be considered
