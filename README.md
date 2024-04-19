@@ -104,3 +104,7 @@ I have developed a Fake News Detection API that is ready to be integrated into y
 If this project has been beneficial to you, please consider giving it a star⭐🥲 on GitHub! Your support encourages further development and helps others discover the project.
 
 Thank you for exploring this MLOps pipeline template. It has been a valuable learning experience, and I hope it will be equally insightful for you. :)
+
+
+### !Note
+It can be significantly improved by you. While version control could elevate your project, I've avoided using it here to keep things simple. Additionally, more advanced technologies could be considered
