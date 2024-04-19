@@ -68,7 +68,7 @@ Customize the scripts in `src/pipeline/` to match your machine learning tasks.
 
 ## For API and Docker Deployment
 - Tailor the `api/api.py` to set up your prediction endpoints.
-- Adjust the `*Dockerfile*` to bundle your API and model into a container for deployment.
+- Adjust the `Dockerfile` to bundle your API and model into a container for deployment.
 
 If you're unfamiliar with Docker or how to use it, start by reading this article: [How Docker Containers Work](https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/), and then watch the video: [Build YOUR OWN Dockerfile](https://www.youtube.com/watch?v=SnSH8Ht3MIc).
 
