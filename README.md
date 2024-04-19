@@ -15,8 +15,7 @@ This template is structured to support end-to-end machine learning workflows, fr
 │   ├── model.pkl        # Serialized model file
 │   └── vectorizer.pkl   # Serialized feature vectorizer
 ├── artifacts
-│   ├── labels.pkl       # Serialized label encoder
-│   └── raw_data.zip     # Compressed dataset
+│   ├── raw_data.zip     # Compressed dataset
 ├── config
 │   └── settings.ini     # Configuration settings
 ├── notebooks
