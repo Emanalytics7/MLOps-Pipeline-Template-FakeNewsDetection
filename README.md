@@ -97,7 +97,7 @@ Here's a quick rundown:
 
 ## Integrating the Fake News Detection API
 
-I have developed a Fake News Detection API that is ready to be integrated into your applications. As a software engineer, you can easily leverage this API for real-time predictions by sending requests to the `/predict` endpoint. The model backing this API boasts a high F1 score of 0.98 on testing data, indicating its reliability and precision.
+I have developed a Fake News Detection API that is ready to be integrated into your applications. You can easily leverage this API for real-time predictions by sending requests to the `/predict` endpoint. The model backing this API boasts a high F1 score of 0.98 on testing data, indicating its reliability and precision.
 
 ## Show Your Support
 
