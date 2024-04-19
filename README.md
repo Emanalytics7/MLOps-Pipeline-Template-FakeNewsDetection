@@ -8,6 +8,44 @@ This template is designed to automate and streamline your machine learning proje
 
 *Make your own project super cool!* :)
 
+# How it works
+```sh
++---------------------------------------+
+|             MLOps Pipeline            |
++---------------------------------------+
+|                                       |
+|   [Start]                             |
+|       |                               |
+|       v                               |
+|   [Data Ingestion]                    |
+|       |                               |
+|       v                               |
+|   [Data Preprocessing]                |
+|       |                               |
+|       v                               |
+|   [Feature Engineering] -> [OPTIONAL] |
+|       |                               |
+|       v                               |
+|   [Model Training]                    |
+|       |                               |
+|       v                               |
+|   [Model Evaluation]                  |
+|       |                               |
+|       v                               |
+|   [Model Deployment]                  |
+|       |                               |
+|       v                               |
+|   [API Development]                   |
+|       |                               |
+|       v                               |
+|   [Containerization with Docker]      |
+|       |                               |
+|       v                               |
+|   [CI/CD Integration]                 |
+|                                       |
++---------------------------------------+
+```
+
 # Project Overview
 This template is structured to support end-to-end machine learning workflows, from data ingestion to model deployment. Here's how the project is organized:
 
