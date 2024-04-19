@@ -16,13 +16,14 @@ This template is designed to automate and streamline your machine learning proje
 ## Technical Setup
 - **Development Environment**: You should have a setup suitable for Python development. I recommend using an IDE like PyCharm or VSCode.
 - **Python Environment**: Know how to set up and manage Python environments using `venv` or `conda`.
+- 
     ```bash
-    # Example of setting up a virtual environment with venv
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
 - **Dependencies**:
      Ensure you know how to install dependencies from a requirements.txt file:
+  
     ```bash
     pip install -r requirements.txt
     ```
