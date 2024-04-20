@@ -56,7 +56,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          slot-name: 'production'
           
       - name: Deploy to Azure Container Instances
         run: |
