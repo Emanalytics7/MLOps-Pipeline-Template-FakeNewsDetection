@@ -1,4 +1,5 @@
 # Comprehensive MLOps Pipeline Template for Machine Learning Projects
+
 Enhance the efficiency and scalability of your machine learning projects with our MLOps Pipeline Template. This comprehensive guide will help you understand, customize, and efficiently utilize the template to align with your project requirements.
 
 ![image](https://github.com/Emanalytics7/MLOps-Pipeline-Template-FakeNewsDetection/assets/142586747/68db41fa-3a8f-4ed8-8561-c9d94c5afcd5)
