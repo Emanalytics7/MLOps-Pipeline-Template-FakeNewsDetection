@@ -9,6 +9,8 @@ This template is designed to automate and streamline your machine learning proje
 
 *Make your own project super cool!* :)
 
+Start from the basics [MlOps-Explained](https://www.arrikto.com/mlops-explained/)
+
 # Prerequisites
 ## Skills Required
 - **Python**: Proficiency in Python programming is essential as the project's codebase is primarily Python.
