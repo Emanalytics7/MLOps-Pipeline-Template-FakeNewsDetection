@@ -56,7 +56,7 @@ Start from the basics [MlOps-Explained](https://www.arrikto.com/mlops-explained/
 |   [Model Evaluation]                  |
 |       |                               |
 |       v                               |
-|   [Model Deployment]                  |
+|   [Model Deployment] -> [OPTIONAL]    |
 |       |                               |
 |       v                               |
 |   [API Development]                   |
