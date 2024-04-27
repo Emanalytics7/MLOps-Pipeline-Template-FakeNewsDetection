@@ -13,6 +13,7 @@ Start from the basics [MlOps-Explained](https://www.arrikto.com/mlops-explained/
 
 # Prerequisites
 ## Skills Required
+
 - **Python**: Proficiency in Python programming is essential as the project's codebase is primarily Python.
 - **Basic Machine Learning Knowledge**: Understand fundamental machine learning concepts and workflows.
 
